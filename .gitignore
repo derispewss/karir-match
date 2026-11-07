@@ -1,0 +1,53 @@
+# OS dan editor
+.DS_Store
+.idea/
+.vscode/
+
+# Rahasia dan konfigurasi lokal
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+build/
+dist/
+
+# Conda
+.conda/
+
+# Node
+node_modules/
+.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Database lokal
+*.sqlite
+*.sqlite3
+*.db
+
+# Data dan artefak besar (hanya penanda direktori yang di-commit)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+artifacts/*
+!artifacts/.gitkeep
+
+# Log dan berkas sementara
+*.log
+*.tmp
+tmp/
