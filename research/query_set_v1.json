@@ -1,0 +1,254 @@
+[
+  {
+    "id": "q01",
+    "query": "Backend Python FastAPI",
+    "language": "id",
+    "intent": "Mencari posisi Backend Engineer dengan teknologi spesifik Python dan FastAPI."
+  },
+  {
+    "id": "q02",
+    "query": "Frontend Developer React Tailwind",
+    "language": "id",
+    "intent": "Mencari pekerjaan Frontend yang menggunakan React dan Tailwind CSS."
+  },
+  {
+    "id": "q03",
+    "query": "Data Analyst SQL Tableau",
+    "language": "id",
+    "intent": "Mencari pekerjaan analisa data bisnis dengan keahlian SQL dan visualisasi Tableau."
+  },
+  {
+    "id": "q04",
+    "query": "Machine Learning Engineer PyTorch",
+    "language": "mixed",
+    "intent": "Mencari lowongan terkait rekayasa model AI/ML dengan framework PyTorch."
+  },
+  {
+    "id": "q05",
+    "query": "DevOps Engineer Kubernetes Cloud AWS",
+    "language": "mixed",
+    "intent": "Mencari posisi infrastruktur cloud, automasi, dan container orchestration."
+  },
+  {
+    "id": "q06",
+    "query": "QA Automation Engineer Selenium Postman",
+    "language": "mixed",
+    "intent": "Mencari pekerjaan pengujian perangkat lunak otomatis."
+  },
+  {
+    "id": "q07",
+    "query": "UI UX Designer Figma Prototyping",
+    "language": "mixed",
+    "intent": "Mencari pekerjaan desain antarmuka dan pengalaman pengguna produk digital."
+  },
+  {
+    "id": "q08",
+    "query": "Product Manager Agile Scrum",
+    "language": "mixed",
+    "intent": "Mencari posisi manajer produk dengan metode kerja Agile."
+  },
+  {
+    "id": "q09",
+    "query": "Fullstack Developer Node.js React",
+    "language": "mixed",
+    "intent": "Mencari posisi pengembang web menyeluruh (backend & frontend)."
+  },
+  {
+    "id": "q10",
+    "query": "Mobile Developer Flutter Android",
+    "language": "id",
+    "intent": "Mencari lowongan pengembang aplikasi mobile berbasis framework Flutter."
+  },
+  {
+    "id": "q11",
+    "query": "Junior Golang Developer",
+    "language": "mixed",
+    "intent": "Mencari lowongan backend dengan Go untuk entry-level atau junior."
+  },
+  {
+    "id": "q12",
+    "query": "Senior Data Engineer Spark Airflow",
+    "language": "en",
+    "intent": "Mencari posisi perancang pipeline data skala besar dengan Apache Spark dan Airflow."
+  },
+  {
+    "id": "q13",
+    "query": "Software Engineer Jakarta Hybrid",
+    "language": "id",
+    "intent": "Pencarian lowongan software engineer di Jakarta dengan model kerja hybrid."
+  },
+  {
+    "id": "q14",
+    "query": "Cyber Security Analyst SOC",
+    "language": "en",
+    "intent": "Mencari posisi keamanan siber untuk analisis insiden dan Security Operations Center."
+  },
+  {
+    "id": "q15",
+    "query": "Database Administrator PostgreSQL",
+    "language": "mixed",
+    "intent": "Mencari pekerjaan pengelolaan dan optimasi basis data PostgreSQL."
+  },
+  {
+    "id": "q16",
+    "query": "Site Reliability Engineer Linux Terraform",
+    "language": "en",
+    "intent": "Mencari posisi SRE berfokus pada infrastruktur otomatisasi dan keandalan sistem."
+  },
+  {
+    "id": "q17",
+    "query": "iOS Developer Swift",
+    "language": "en",
+    "intent": "Mencari pekerjaan spesifik aplikasi native iOS dengan bahasa pemrograman Swift."
+  },
+  {
+    "id": "q18",
+    "query": "Android Developer Kotlin Jetpack",
+    "language": "mixed",
+    "intent": "Mencari pengembang aplikasi native Android menggunakan Kotlin."
+  },
+  {
+    "id": "q19",
+    "query": "Tech Lead Microservices Architecture",
+    "language": "en",
+    "intent": "Mencari posisi kepemimpinan teknis dalam arsitektur sistem terdistribusi."
+  },
+  {
+    "id": "q20",
+    "query": "Internship Web Developer Magang",
+    "language": "id",
+    "intent": "Mencari kesempatan magang atau internship di bidang pengembangan web."
+  },
+  {
+    "id": "q21",
+    "query": "Business Intelligence Analyst PowerBI DAX",
+    "language": "en",
+    "intent": "Mencari analis BI yang menguasai perancangan dasbor PowerBI dan query DAX."
+  },
+  {
+    "id": "q22",
+    "query": "System Administrator Windows Server Active Directory",
+    "language": "en",
+    "intent": "Pekerjaan sysadmin pengelolaan jaringan kantor berbasis domain Windows."
+  },
+  {
+    "id": "q23",
+    "query": "Frontend Vue.js Nuxt",
+    "language": "mixed",
+    "intent": "Mencari lowongan frontend menggunakan ekosistem Vue/Nuxt.js."
+  },
+  {
+    "id": "q24",
+    "query": "Scrum Master Agile Coach",
+    "language": "mixed",
+    "intent": "Fasilitator proses sprint tim engineering dan implementasi kultur Agile."
+  },
+  {
+    "id": "q25",
+    "query": "Cloud Architect GCP Kubernetes",
+    "language": "en",
+    "intent": "Perancang arsitektur komputasi awan di Google Cloud Platform."
+  },
+  {
+    "id": "q26",
+    "query": "Graphic Designer Adobe Illustrator Photoshop",
+    "language": "id",
+    "intent": "Pekerjaan desain grafis aset promosi dan materi branding digital."
+  },
+  {
+    "id": "q27",
+    "query": "Content Creator Video Editor Premiere CapCut",
+    "language": "id",
+    "intent": "Mencari lowongan pembuatan konten media sosial dan editing video pendek."
+  },
+  {
+    "id": "q28",
+    "query": "IT Support Specialist Hardware Jaringan",
+    "language": "id",
+    "intent": "Staf dukungan teknis kantor untuk troubleshoot PC, printer, dan router."
+  },
+  {
+    "id": "q29",
+    "query": "HR Recruiter Talent Acquisition Tech",
+    "language": "mixed",
+    "intent": "Spesialis rekrutmen karyawan khusus talenta di bidang teknologi informasi."
+  },
+  {
+    "id": "q30",
+    "query": "Digital Marketing Specialist SEO SEM",
+    "language": "id",
+    "intent": "Optimasi mesin pencari dan manajemen iklan berbayar (Google Ads)."
+  },
+  {
+    "id": "q31",
+    "query": "Account Executive B2B SaaS Sales",
+    "language": "en",
+    "intent": "Lowongan penjualan solusi perangkat lunak ke korporasi (B2B)."
+  },
+  {
+    "id": "q32",
+    "query": "Customer Success Manager Tech Support",
+    "language": "mixed",
+    "intent": "Membangun relasi retensi klien software dan menangani eskalasi problem."
+  },
+  {
+    "id": "q33",
+    "query": "Copywriter Creative Content Bahasa Indonesia",
+    "language": "id",
+    "intent": "Penulis artikel kreatif, caption media sosial, dan materi periklanan."
+  },
+  {
+    "id": "q34",
+    "query": "Penetration Tester Ethical Hacker",
+    "language": "en",
+    "intent": "Uji penetrasi keamanan jaringan dan audit celah kerentanan sistem."
+  },
+  {
+    "id": "q35",
+    "query": "Embedded Systems Engineer C C++ IoT",
+    "language": "en",
+    "intent": "Pemrograman mikrokontroler dan perangkat hardware terhubung internet."
+  },
+  {
+    "id": "q36",
+    "query": "Network Engineer Cisco Mikrotik CCNA",
+    "language": "mixed",
+    "intent": "Konfigurasi switch, routing jaringan LAN/WAN bersertifikasi CCNA."
+  },
+  {
+    "id": "q37",
+    "query": "Financial Analyst Modeling Excel",
+    "language": "en",
+    "intent": "Menganalisis laporan keuangan perusahaan dan valuasi bisnis."
+  },
+  {
+    "id": "q38",
+    "query": "Community Manager Discord Telegram Web3",
+    "language": "mixed",
+    "intent": "Pengelola interaksi komunitas online dan acara moderasi grup."
+  },
+  {
+    "id": "q39",
+    "query": "SEO Specialist Google Analytics Search Console",
+    "language": "mixed",
+    "intent": "Peningkat peringkat website di Google dan audit technical SEO."
+  },
+  {
+    "id": "q40",
+    "query": "Backend Ruby on Rails",
+    "language": "en",
+    "intent": "Pengembang API dan aplikasi monolit berbasis framework Ruby on Rails."
+  },
+  {
+    "id": "q41",
+    "query": "Fullstack Java Spring Boot Angular",
+    "language": "en",
+    "intent": "Pengembang aplikasi enterprise perbankan menggunakan Java dan Angular."
+  },
+  {
+    "id": "q42",
+    "query": "Data Scientist NLP LLM HuggingFace",
+    "language": "mixed",
+    "intent": "Eksperimen pemrosesan bahasa alami dan penyesuaian model bahasa besar."
+  }
+]

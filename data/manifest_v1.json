@@ -1,0 +1,20 @@
+{
+  "version": "v1",
+  "date": "2026-11-08",
+  "datasets": [
+    {
+      "name": "synthetic_indonesian",
+      "path": "data/processed/corpus_id_v1.json",
+      "sha256": "$(shasum -a 256 data/processed/corpus_id_v1.json | awk '{print $1}')",
+      "size": $(stat -f%z data/processed/corpus_id_v1.json),
+      "license": "CC0 (self‑generated)"
+    },
+    {
+      "name": "odbl_english_kaggle",
+      "path": "data/raw/kaggle_linkedin_jobs_odbl.json",
+      "sha256": "<to‑be‑filled‑after‑download>",
+      "size": "<to‑be‑filled>",
+      "license": "ODbL 1.0 (Kaggle dataset)"
+    }
+  ]
+}

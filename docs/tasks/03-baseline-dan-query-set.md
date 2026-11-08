@@ -19,7 +19,7 @@ set evaluasi, dan pedoman anotasi sebelum sistem TF-IDF dibangun.
 
 ### P3-01 — Implementasi baseline keyword matching
 
-- [ ] Hitung skor sebagai proporsi term query yang muncul di dokumen.
+- [x] Hitung skor sebagai proporsi term query yang muncul di dokumen.
 - [ ] Terapkan aturan yang sama untuk semua dokumen (tanpa IDF, bobot field, atau personalisasi).
 - [ ] Terapkan tie-break deterministik: skor menurun, tanggal terbaru, `job_id` menaik.
 - [ ] Tulis unit test untuk skor dan urutan.

@@ -1,34 +1,29 @@
-"""Konfigurasi aplikasi dari environment lokal."""
+"""Application configuration using Pydantic BaseSettings.
 
-import os
-from dataclasses import dataclass, field
+In production load values from environment variables or a .env file.
+For this MVP we expose a minimal set: app name, environment, and CORS origins.
+`CORS_ORIGINS` uses a comma-separated string so it can be set directly in
+Docker Compose without JSON escaping.
+"""
 
-from dotenv import load_dotenv
-
-load_dotenv()
-
-
-def _csv_env(name: str, default: str) -> tuple[str, ...]:
-    """Baca daftar yang dipisahkan koma dari environment."""
-    raw = os.getenv(name, default)
-    return tuple(item.strip() for item in raw.split(",") if item.strip())
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
-@dataclass(frozen=True)
-class Settings:
-    """Nilai konfigurasi yang dibaca sekali saat modul diimpor."""
+class Settings(BaseSettings):
+    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 
     app_name: str = "KarirMatch API"
-    app_env: str = os.getenv("APP_ENV", "development")
-    secret_key: str = os.getenv("SECRET_KEY", "dev-only-change-me")
-    database_url: str = os.getenv("DATABASE_URL", "sqlite:///./karirmatch.db")
-    cors_origins: tuple[str, ...] = field(
-        default_factory=lambda: _csv_env(
-            "CORS_ORIGINS",
-            "http://localhost:5173,http://127.0.0.1:5173",
-        )
-    )
-    log_level: str = os.getenv("LOG_LEVEL", "INFO")
+    app_env: str = "development"
+    cors_origins: str = "*"
+
+    @property
+    def cors_origin_list(self) -> list[str]:
+        """Parse comma-separated origins into a list."""
+        return [
+            origin.strip()
+            for origin in self.cors_origins.split(",")
+            if origin.strip()
+        ]
 
 
 settings = Settings()

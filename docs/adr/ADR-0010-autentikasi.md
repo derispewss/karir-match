@@ -1,7 +1,7 @@
 # ADR-0010: Autentikasi dan Manajemen Sesi
 
-- **Status:** Diterima sebagian — mekanisme transport (cookie vs token) tertunda
-- **Tanggal:** 7 November 2026
+- **Status:** Diterima — bearer token JWT untuk MVP
+- **Tanggal:** 7 November 2026 (diperbarui 8 November 2026)
 - **Pemilik:** Deris Firmansyah
 - **Sumber:** Grand Design Bagian 7 (Autentikasi; Kebutuhan non-fungsional Security/Privacy)
 - **Menggantikan:** —
@@ -37,6 +37,32 @@ Prinsip yang diterima:
 Mekanisme transport final (cookie vs token) dipilih saat implementasi dan dicatat sebagai
 keputusan lanjutan.
 
+## Keputusan Transport (D3)
+
+Mekanisme yang dipilih untuk MVP adalah **bearer token JWT**:
+
+- Token diterbitkan oleh `POST /auth/login` dan `POST /auth/register`.
+- Payload token berisi `sub` (ID pengguna) dan `exp`; masa berlaku 30 menit.
+- Algoritma `HS256`; `SECRET_KEY` dibaca dari environment variable.
+- Frontend menyimpan token di `localStorage` dengan kunci `karirmatch_token` dan
+  mengirimnya melalui header `Authorization: Bearer <token>`.
+- Logout bersifat client-side: token dihapus dari penyimpanan klien. Server tidak
+  menyimpan daftar token yang dicabut pada MVP ini.
+- Endpoint yang membutuhkan login memvalidasi tanda tangan dan masa berlaku token.
+- Rate limit login 5 percobaan per menit per IP dengan pesan error generik.
+
+Catatan keamanan: `localStorage` rentan terhadap XSS. Untuk MVP, risiko dikurangi dengan
+CSP dasar, tidak menampilkan HTML mentah dari input pengguna, dan tidak menyimpan data
+sensitif di token. Jika aplikasi naik ke produksi, pertimbangkan cookie `HttpOnly` +
+CSRF atau rotasi/refresh token dengan pencabutan server-side.
+
+### Konsekuensi transport
+
+- API dapat dipakai klien non-browser tanpa perubahan kontrak.
+- Tidak ada state sesi di server; logout tidak mencabut token yang sudah diterbitkan.
+- Masa berlaku pendek (30 menit) membatasi dampak token yang bocor.
+- Perlu audit XSS dan CSP sebelum deployment publik.
+
 ## Alternatif yang dipertimbangkan
 
 | Alternatif | Penilaian |
@@ -65,11 +91,12 @@ keputusan lanjutan.
 
 ## Tindak lanjut
 
-- Pilih cookie atau token sebelum implementasi auth.
-- Tentukan masa berlaku sesi/token.
-- Implementasikan rate limit login.
-- Tambahkan test akses admin (TC12) dan akses data pengguna lain.
-- Catat keputusan transport di ADR baru atau pembaruan ADR ini.
+- [x] Pilih cookie atau token sebelum implementasi auth — bearer token JWT.
+- [x] Tentukan masa berlaku sesi/token — 30 menit.
+- [x] Implementasikan rate limit login.
+- [x] Tambahkan test akses admin (TC12) dan akses data pengguna lain.
+- [x] Catat keputusan transport di ADR baru atau pembaruan ADR ini.
+- [ ] Audit XSS/CSP dan pertimbangkan cookie `HttpOnly` sebelum deployment publik.
 
 ## Referensi
 

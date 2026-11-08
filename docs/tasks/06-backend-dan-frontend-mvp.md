@@ -2,7 +2,7 @@
 
 **Minggu:** 6–9 (paralel dengan F4–F5)  
 **Estimasi:** ±13,5 hari  
-**Status:** Belum dimulai  
+**Status:** Selesai  
 **Prasyarat:** Gate F4 dan F5 untuk integrasi; keputusan D2 dan D3 sebelum mulai  
 **Gate keluar:** F6 — alur utama dapat didemokan, test integration lulus, OpenAPI valid
 
@@ -20,14 +20,14 @@ dashboard evaluasi admin.
 
 ### P6-01 — Skema database dan migrasi
 
-- [ ] Implementasikan tabel: `users`, `user_preferences`, `job_categories`, `jobs`,
+- [x] Implementasikan tabel: `users`, `user_preferences`, `job_categories`, `jobs`,
   `skills`, `job_skills`, `saved_jobs`, `search_history`, `interaction_events`,
   `recommendation_logs`.
-- [ ] Implementasikan tabel evaluasi: `eval_queries`, `relevance_judgments`, `eval_runs`.
-- [ ] Tambahkan constraint: email unik, composite PK bookmark, grade 0–2, enum event.
-- [ ] Aktifkan `PRAGMA foreign_keys = ON` untuk SQLite.
-- [ ] Buat indeks sesuai `docs/data/database-design.md` Bagian 5.
-- [ ] Siapkan migrasi naik/turun.
+- [x] Implementasikan tabel evaluasi: `eval_queries`, `relevance_judgments`, `eval_runs`.
+- [x] Tambahkan constraint: email unik, composite PK bookmark, grade 0–2, enum event.
+- [x] Aktifkan `PRAGMA foreign_keys = ON` untuk SQLite.
+- [x] Buat indeks sesuai `docs/data/database-design.md` Bagian 5.
+- [x] Siapkan migrasi naik/turun.
 
 - **Output:** Skema database dan migrasi.
 - **Estimasi:** 0,75 hari.
@@ -37,10 +37,10 @@ dashboard evaluasi admin.
 
 ### P6-02 — Lapisan repository dan seed data
 
-- [ ] Buat lapisan akses data dengan kueri berparameter/ORM.
-- [ ] Buat seed kategori, skills, dan lowongan dari dataset v1.
-- [ ] Pastikan seed idempoten dan dapat dijalankan ulang.
-- [ ] Jangan menaruh data pribadi nyata di seed.
+- [x] Buat lapisan akses data dengan kueri berparameter/ORM.
+- [x] Buat seed kategori, skills, dan lowongan dari dataset v1.
+- [x] Pastikan seed idempoten dan dapat dijalankan ulang.
+- [x] Jangan menaruh data pribadi nyata di seed.
 
 - **Output:** Repository dan seed script.
 - **Estimasi:** 0,25 hari.
@@ -50,13 +50,13 @@ dashboard evaluasi admin.
 
 ### P6-03 — Autentikasi dan sesi
 
-- [ ] Putuskan D3: session cookie atau bearer token.
-- [ ] Hash kata sandi dengan bcrypt atau argon2; jangan menulis algoritma sendiri.
-- [ ] Implementasikan register, login, logout.
-- [ ] Terapkan rate limit login dan pesan error generik.
-- [ ] Jika cookie: `HttpOnly`, `Secure` di deployment, `SameSite` sesuai; proteksi CSRF.
-- [ ] Jika token: masa berlaku, penyimpanan aman, dan logout yang mengakhiri token.
-- [ ] Tulis test registrasi duplikat, kredensial salah, dan rate limit.
+- [x] Putuskan D3: session cookie atau bearer token.
+- [x] Hash kata sandi dengan bcrypt atau argon2; jangan menulis algoritma sendiri.
+- [x] Implementasikan register, login, logout.
+- [x] Terapkan rate limit login dan pesan error generik.
+- [x] Jika cookie: `HttpOnly`, `Secure` di deployment, `SameSite` sesuai; proteksi CSRF.
+- [x] Jika token: masa berlaku, penyimpanan aman, dan logout yang mengakhiri token.
+- [x] Tulis test registrasi duplikat, kredensial salah, dan rate limit.
 
 - **Output:** Endpoint autentikasi dan test.
 - **Estimasi:** 1,0 hari.
@@ -66,12 +66,12 @@ dashboard evaluasi admin.
 
 ### P6-04 — Endpoint pencarian dan detail lowongan
 
-- [ ] Implementasikan `GET /api/jobs/search` dengan query, filter, sort, limit.
-- [ ] Validasi `limit`, `sort`, dan tipe filter.
-- [ ] Kembalikan `match_level`, `matched_terms`, dan `reason`; jangan kirim skor mentah.
-- [ ] Implementasikan `GET /api/jobs/{job_id}`.
-- [ ] Tangani empty state dan indeks belum siap (503).
-- [ ] Tentukan kebijakan lowongan tidak aktif dan terapkan konsisten.
+- [x] Implementasikan `GET /api/jobs/search` dengan query, filter, sort, limit.
+- [x] Validasi `limit`, `sort`, dan tipe filter.
+- [x] Kembalikan `match_level`, `matched_terms`, dan `reason`; jangan kirim skor mentah.
+- [x] Implementasikan `GET /api/jobs/{job_id}`.
+- [x] Tangani empty state dan indeks belum siap (503).
+- [x] Tentukan kebijakan lowongan tidak aktif dan terapkan konsisten.
 
 - **Output:** Endpoint jobs dan test kontrak.
 - **Estimasi:** 0,75 hari.
@@ -81,10 +81,10 @@ dashboard evaluasi admin.
 
 ### P6-05 — Endpoint preferensi
 
-- [ ] Implementasikan `GET /api/me/preferences`.
-- [ ] Implementasikan `PUT /api/me/preferences`.
-- [ ] Validasi tipe data; array kosong valid.
-- [ ] Periksa kepemilikan data di server.
+- [x] Implementasikan `GET /api/me/preferences`.
+- [x] Implementasikan `PUT /api/me/preferences`.
+- [x] Validasi tipe data; array kosong valid.
+- [x] Periksa kepemilikan data di server.
 
 - **Output:** Endpoint preferensi dan test.
 - **Estimasi:** 0,25 hari.
@@ -94,12 +94,12 @@ dashboard evaluasi admin.
 
 ### P6-06 — Endpoint bookmark idempoten
 
-- [ ] Implementasikan `GET /api/me/bookmarks` dengan limit/offset.
-- [ ] Implementasikan `POST /api/me/bookmarks`.
-- [ ] Implementasikan `DELETE /api/me/bookmarks/{job_id}`.
-- [ ] Pastikan simpan ganda menghasilkan satu baris (TC11).
-- [ ] Pastikan hapus bookmark yang tidak ada tetap 204.
-- [ ] Catat event `save` secara otomatis tanpa duplikasi.
+- [x] Implementasikan `GET /api/me/bookmarks` dengan limit/offset.
+- [x] Implementasikan `POST /api/me/bookmarks`.
+- [x] Implementasikan `DELETE /api/me/bookmarks/{job_id}`.
+- [x] Pastikan simpan ganda menghasilkan satu baris (TC11).
+- [x] Pastikan hapus bookmark yang tidak ada tetap 204.
+- [x] Catat event `save` secara otomatis tanpa duplikasi.
 
 - **Output:** Endpoint bookmark dan test.
 - **Estimasi:** 0,5 hari.
@@ -108,12 +108,12 @@ dashboard evaluasi admin.
 
 ### P6-07 — Event tracking
 
-- [ ] Implementasikan `POST /api/events`.
-- [ ] Validasi `event_type` dan field wajib per tipe.
-- [ ] Set `is_simulated` di server, bukan dari klien biasa.
-- [ ] Deduplikasi event `save` per pengguna + lowongan + jenis sinyal.
-- [ ] Jangan menyimpan isi lamaran, CV, atau data sensitif.
-- [ ] Catat posisi tayang untuk analisis position bias.
+- [x] Implementasikan `POST /api/events`.
+- [x] Validasi `event_type` dan field wajib per tipe.
+- [x] Set `is_simulated` di server, bukan dari klien biasa.
+- [x] Deduplikasi event `save` per pengguna + lowongan + jenis sinyal.
+- [x] Jangan menyimpan isi lamaran, CV, atau data sensitif.
+- [x] Catat posisi tayang untuk analisis position bias.
 
 - **Output:** Endpoint event dan test.
 - **Estimasi:** 0,5 hari.
@@ -122,12 +122,12 @@ dashboard evaluasi admin.
 
 ### P6-08 — Endpoint feed rekomendasi
 
-- [ ] Implementasikan `GET /api/me/recommendations`.
-- [ ] Kecualikan lowongan yang sudah disimpan (TC10).
-- [ ] Terapkan cold start `β = 0` dan slot non-personalisasi.
-- [ ] Sertakan alasan dan `source`; `match_level` opsional bila valid.
-- [ ] Jangan kirim skor mentah.
-- [ ] Terapkan keputusan D4 secara konsisten.
+- [x] Implementasikan `GET /api/me/recommendations`.
+- [x] Kecualikan lowongan yang sudah disimpan (TC10).
+- [x] Terapkan cold start `β = 0` dan slot non-personalisasi.
+- [x] Sertakan alasan dan `source`; `match_level` opsional bila valid.
+- [x] Jangan kirim skor mentah.
+- [x] Terapkan keputusan D4 secara konsisten.
 
 - **Output:** Endpoint rekomendasi dan test.
 - **Estimasi:** 0,75 hari.
@@ -137,11 +137,11 @@ dashboard evaluasi admin.
 
 ### P6-09 — Penghapusan data pengguna
 
-- [ ] Implementasikan `DELETE /api/me/data`.
-- [ ] Hapus preferensi, bookmark, riwayat pencarian, event, dan log rekomendasi
+- [x] Implementasikan `DELETE /api/me/data`.
+- [x] Hapus preferensi, bookmark, riwayat pencarian, event, dan log rekomendasi
   dalam satu transaksi.
-- [ ] Jangan menghapus data evaluasi.
-- [ ] Buat operasi idempoten.
+- [x] Jangan menghapus data evaluasi.
+- [x] Buat operasi idempoten.
 
 - **Output:** Endpoint hapus data dan test.
 - **Estimasi:** 0,5 hari.
@@ -150,12 +150,12 @@ dashboard evaluasi admin.
 
 ### P6-10 — Endpoint admin evaluasi
 
-- [ ] Implementasikan `GET /api/admin/eval/summary`.
-- [ ] Implementasikan `POST /api/admin/eval/run`.
-- [ ] Terapkan role admin; pengguna biasa mendapat 403 (TC12).
-- [ ] Validasi `config_path` terhadap direktori konfigurasi yang diizinkan.
-- [ ] Batasi eksekusi sinkron; arahkan evaluasi berat ke CLI.
-- [ ] Tampilkan `config_hash` dan `dataset_hash` pada hasil.
+- [x] Implementasikan `GET /api/admin/eval/summary`.
+- [x] Implementasikan `POST /api/admin/eval/run`.
+- [x] Terapkan role admin; pengguna biasa mendapat 403 (TC12).
+- [x] Validasi `config_path` terhadap direktori konfigurasi yang diizinkan.
+- [x] Batasi eksekusi sinkron; arahkan evaluasi berat ke CLI.
+- [x] Tampilkan `config_hash` dan `dataset_hash` pada hasil.
 
 - **Output:** Endpoint admin dan test.
 - **Estimasi:** 0,75 hari.
@@ -164,11 +164,11 @@ dashboard evaluasi admin.
 
 ### P6-11 — Error envelope, logging, dan keamanan
 
-- [ ] Terapkan format error konsisten (`error.code`, `message`, `details`, `request_id`).
-- [ ] Tambahkan request ID dan structured logging.
-- [ ] Jangan log kata sandi, token, isi lamaran, atau data sensitif.
-- [ ] Tambahkan header keamanan dan CORS terbatas.
-- [ ] Pastikan stack trace tidak dikirim ke klien.
+- [x] Terapkan format error konsisten (`error.code`, `message`, `details`, `request_id`).
+- [x] Tambahkan request ID dan structured logging.
+- [x] Jangan log kata sandi, token, isi lamaran, atau data sensitif.
+- [x] Tambahkan header keamanan dan CORS terbatas.
+- [x] Pastikan stack trace tidak dikirim ke klien.
 
 - **Output:** Middleware error/logging dan konfigurasi keamanan.
 - **Estimasi:** 0,5 hari.
@@ -177,10 +177,10 @@ dashboard evaluasi admin.
 
 ### P6-12 — Sinkronisasi kontrak OpenAPI
 
-- [ ] Pastikan setiap endpoint sesuai `docs/api/openapi.yaml`.
-- [ ] Validasi spec dengan `openapi-spec-validator`.
-- [ ] Tambahkan contract test untuk status code dan skema utama.
-- [ ] Perbarui spec bila ada perubahan kontrak dan catat di changelog.
+- [x] Pastikan setiap endpoint sesuai `docs/api/openapi.yaml`.
+- [x] Validasi spec dengan `openapi-spec-validator`.
+- [x] Tambahkan contract test untuk status code dan skema utama.
+- [x] Perbarui spec bila ada perubahan kontrak dan catat di changelog.
 
 - **Output:** OpenAPI tersinkron dan tervalidasi.
 - **Estimasi:** 0,25 hari.
@@ -193,10 +193,10 @@ dashboard evaluasi admin.
 
 ### P6-13 — Scaffold frontend, routing, dan API client
 
-- [ ] Siapkan React + Vite (atau Django sesuai D2).
-- [ ] Buat routing halaman: cari, detail, login, register, preferensi, bookmark, feed, admin.
-- [ ] Buat API client dengan penanganan error dan base URL dari environment.
-- [ ] Jangan menaruh rahasia di frontend.
+- [x] Siapkan React + Vite (atau Django sesuai D2).
+- [x] Buat routing halaman: cari, detail, login, register, preferensi, bookmark, feed, admin.
+- [x] Buat API client dengan penanganan error dan base URL dari environment.
+- [x] Jangan menaruh rahasia di frontend.
 
 - **Output:** Scaffold frontend dan API client.
 - **Estimasi:** 0,5 hari.
@@ -205,11 +205,11 @@ dashboard evaluasi admin.
 
 ### P6-14 — Halaman pencarian
 
-- [ ] Search bar, filter lokasi/kategori/tipe/level, dan sort.
-- [ ] Tampilkan hasil dengan tingkat kecocokan dan istilah yang cocok.
-- [ ] Tampilkan empty, loading, dan error state.
-- [ ] Tampilkan filter aktif dan cara menghapusnya.
-- [ ] Jangan menampilkan skor mentah atau persentase.
+- [x] Search bar, filter lokasi/kategori/tipe/level, dan sort.
+- [x] Tampilkan hasil dengan tingkat kecocokan dan istilah yang cocok.
+- [x] Tampilkan empty, loading, dan error state.
+- [x] Tampilkan filter aktif dan cara menghapusnya.
+- [x] Jangan menampilkan skor mentah atau persentase.
 
 - **Output:** Halaman pencarian.
 - **Estimasi:** 0,75 hari.
@@ -218,11 +218,11 @@ dashboard evaluasi admin.
 
 ### P6-15 — Halaman detail lowongan
 
-- [ ] Tampilkan judul, perusahaan, lokasi, tipe, level, kategori, deskripsi,
+- [x] Tampilkan judul, perusahaan, lokasi, tipe, level, kategori, deskripsi,
   kualifikasi, skills, tanggal, dan sumber.
-- [ ] Sediakan tombol simpan dan event `view`/`rec_click` sesuai konteks.
-- [ ] Tandai lowongan tidak aktif sesuai kebijakan.
-- [ ] Tampilkan ikon info bahwa tingkat kecocokan bukan peluang diterima.
+- [x] Sediakan tombol simpan dan event `view`/`rec_click` sesuai konteks.
+- [x] Tandai lowongan tidak aktif sesuai kebijakan.
+- [x] Tampilkan ikon info bahwa tingkat kecocokan bukan peluang diterima.
 
 - **Output:** Halaman detail.
 - **Estimasi:** 0,5 hari.
@@ -231,10 +231,10 @@ dashboard evaluasi admin.
 
 ### P6-16 — Halaman registrasi dan login
 
-- [ ] Form registrasi dan login dengan validasi.
-- [ ] Tampilkan pesan error generik untuk kredensial salah.
-- [ ] Tangani status login dan logout.
-- [ ] Jangan menyimpan token di tempat yang tidak aman.
+- [x] Form registrasi dan login dengan validasi.
+- [x] Tampilkan pesan error generik untuk kredensial salah.
+- [x] Tangani status login dan logout.
+- [x] Jangan menyimpan token di tempat yang tidak aman.
 
 - **Output:** Halaman auth.
 - **Estimasi:** 0,5 hari.
@@ -243,10 +243,10 @@ dashboard evaluasi admin.
 
 ### P6-17 — Halaman preferensi
 
-- [ ] Form kategori, lokasi, tipe, dan level.
-- [ ] Simpan dan tampilkan preferensi saat ini.
-- [ ] Tampilkan konfirmasi dan error yang jelas.
-- [ ] Pastikan array kosong valid.
+- [x] Form kategori, lokasi, tipe, dan level.
+- [x] Simpan dan tampilkan preferensi saat ini.
+- [x] Tampilkan konfirmasi dan error yang jelas.
+- [x] Pastikan array kosong valid.
 
 - **Output:** Halaman preferensi.
 - **Estimasi:** 0,5 hari.
@@ -255,10 +255,10 @@ dashboard evaluasi admin.
 
 ### P6-18 — Halaman bookmark
 
-- [ ] Daftar bookmark dengan pagination.
-- [ ] Hapus bookmark dan tangani respons idempoten.
-- [ ] Tampilkan empty state.
-- [ ] Tautkan ke detail lowongan.
+- [x] Daftar bookmark dengan pagination.
+- [x] Hapus bookmark dan tangani respons idempoten.
+- [x] Tampilkan empty state.
+- [x] Tautkan ke detail lowongan.
 
 - **Output:** Halaman bookmark.
 - **Estimasi:** 0,5 hari.
@@ -267,11 +267,11 @@ dashboard evaluasi admin.
 
 ### P6-19 — Halaman feed rekomendasi
 
-- [ ] Tampilkan Top-N dengan alasan.
-- [ ] Tandai slot non-personalisasi.
-- [ ] Tampilkan label “simulasi” bila data simulasi ditampilkan.
-- [ ] Tampilkan empty state untuk pengguna baru dengan arahan mengisi preferensi.
-- [ ] Jangan menampilkan alasan personalisasi palsu.
+- [x] Tampilkan Top-N dengan alasan.
+- [x] Tandai slot non-personalisasi.
+- [x] Tampilkan label “simulasi” bila data simulasi ditampilkan.
+- [x] Tampilkan empty state untuk pengguna baru dengan arahan mengisi preferensi.
+- [x] Jangan menampilkan alasan personalisasi palsu.
 
 - **Output:** Halaman feed.
 - **Estimasi:** 0,75 hari.
@@ -281,10 +281,10 @@ dashboard evaluasi admin.
 
 ### P6-20 — Dashboard evaluasi admin
 
-- [ ] Tampilkan ringkasan metrik per eksperimen, bahasa, dan split.
-- [ ] Tampilkan `config_hash` dan `dataset_hash`.
-- [ ] Sediakan tombol jalankan evaluasi dengan batas waktu.
-- [ ] Sembunyikan akses untuk non-admin.
+- [x] Tampilkan ringkasan metrik per eksperimen, bahasa, dan split.
+- [x] Tampilkan `config_hash` dan `dataset_hash`.
+- [x] Sediakan tombol jalankan evaluasi dengan batas waktu.
+- [x] Sembunyikan akses untuk non-admin.
 
 - **Output:** Dashboard admin.
 - **Estimasi:** 0,75 hari.
@@ -293,11 +293,11 @@ dashboard evaluasi admin.
 
 ### P6-21 — Aksesibilitas dasar
 
-- [ ] Pastikan alur utama dapat dioperasikan dengan keyboard.
-- [ ] Periksa kontras warna.
-- [ ] Pastikan label formulir eksplisit.
-- [ ] Jangan menyampaikan status hanya lewat warna.
-- [ ] Sediakan teks alternatif untuk ikon info.
+- [x] Pastikan alur utama dapat dioperasikan dengan keyboard.
+- [x] Periksa kontras warna.
+- [x] Pastikan label formulir eksplisit.
+- [x] Jangan menyampaikan status hanya lewat warna.
+- [x] Sediakan teks alternatif untuk ikon info.
 
 - **Output:** Checklist aksesibilitas.
 - **Estimasi:** 0,5 hari.
@@ -310,10 +310,10 @@ dashboard evaluasi admin.
 
 ### P6-22 — Integration test alur utama
 
-- [ ] Uji register–login–cari–simpan–feed–hapus data.
-- [ ] Uji TC11 (bookmark idempoten), TC12 (akses admin), TC13 (event simulasi).
-- [ ] Uji otorisasi data pengguna lain.
-- [ ] Uji empty state dan error format.
+- [x] Uji register–login–cari–simpan–feed–hapus data.
+- [x] Uji TC11 (bookmark idempoten), TC12 (akses admin), TC13 (event simulasi).
+- [x] Uji otorisasi data pengguna lain.
+- [x] Uji empty state dan error format.
 
 - **Output:** Integration test dan log.
 - **Estimasi:** 0,5 hari.
@@ -322,11 +322,11 @@ dashboard evaluasi admin.
 
 ### P6-23 — Docker Compose dan health check
 
-- [ ] Siapkan Docker Compose untuk aplikasi dan PostgreSQL.
-- [ ] Siapkan volume untuk indeks/artefak.
-- [ ] Tambahkan health check aplikasi dan database.
-- [ ] Pastikan rahasia dibaca dari environment.
-- [ ] Uji rebuild indeks di container.
+- [x] Siapkan Docker Compose untuk aplikasi dan PostgreSQL.
+- [x] Siapkan volume untuk indeks/artefak.
+- [x] Tambahkan health check aplikasi dan database.
+- [x] Pastikan rahasia dibaca dari environment.
+- [x] Uji rebuild indeks di container.
 
 - **Output:** Docker Compose dan dokumentasi deployment.
 - **Estimasi:** 0,5 hari.
@@ -335,9 +335,9 @@ dashboard evaluasi admin.
 
 ### P6-24 — Seed demo dan smoke test
 
-- [ ] Siapkan data demo yang aman dan berlabel simulasi bila relevan.
-- [ ] Jalankan smoke test alur demo.
-- [ ] Catat langkah demo dan fallback bila layanan gagal.
+- [x] Siapkan data demo yang aman dan berlabel simulasi bila relevan.
+- [x] Jalankan smoke test alur demo.
+- [x] Catat langkah demo dan fallback bila layanan gagal.
 
 - **Output:** Data demo dan smoke test.
 - **Estimasi:** 0,5 hari.
@@ -348,24 +348,24 @@ dashboard evaluasi admin.
 
 ## Deliverable Fase
 
-- [ ] API sesuai kontrak OpenAPI.
-- [ ] UI MVP: cari, detail, auth, preferensi, bookmark, feed, dashboard.
-- [ ] Integration test dan smoke test.
-- [ ] Docker Compose dan health check.
-- [ ] Data demo berlabel.
+- [x] API sesuai kontrak OpenAPI.
+- [x] UI MVP: cari, detail, auth, preferensi, bookmark, feed, dashboard.
+- [x] Integration test dan smoke test.
+- [x] Docker Compose dan health check.
+- [x] Data demo berlabel.
 
 ---
 
 ## Gate F6
 
-- [ ] Alur utama dapat diselesaikan dari UI.
-- [ ] Semua endpoint sesuai `docs/api/openapi.yaml`; spec valid.
-- [ ] TC11, TC12, TC13 lulus.
-- [ ] Otorisasi kepemilikan data diuji.
-- [ ] Tidak ada skor mentah di endpoint publik.
-- [ ] Tidak ada rahasia atau data pribadi di repo/log.
-- [ ] Docker Compose berjalan dan health check lulus.
-- [ ] D2 dan D3 tercatat.
+- [x] Alur utama dapat diselesaikan dari UI.
+- [x] Semua endpoint sesuai `docs/api/openapi.yaml`; spec valid.
+- [x] TC11, TC12, TC13 lulus.
+- [x] Otorisasi kepemilikan data diuji.
+- [x] Tidak ada skor mentah di endpoint publik.
+- [x] Tidak ada rahasia atau data pribadi di repo/log.
+- [x] Docker Compose berjalan dan health check lulus.
+- [x] D2 dan D3 tercatat.
 
 ---
 

@@ -19,17 +19,18 @@ direproduksi untuk evaluasi retrieval serta rekomendasi.
 
 ### P2-01 — Verifikasi lisensi dan ketentuan dataset (gate D1)
 
-- [ ] Baca lisensi dan terms of service di halaman sumber asli, bukan ringkasan pihak ketiga.
-- [ ] Catat apakah penggunaan untuk riset, publikasi, dan demo diizinkan.
-- [ ] Catat kewajiban atribusi dan batasan redistribusi.
-- [ ] Jika lisensi tidak jelas atau melarang penggunaan, ganti kandidat.
-- [ ] Catat keputusan D1 beserta tanggal dan alasan.
+- [x] Baca lisensi dan terms of service di halaman sumber asli, bukan ringkasan pihak ketiga.
+- [x] Catat apakah penggunaan untuk riset, publikasi, dan demo diizinkan.
+- [x] Catat kewajiban atribusi dan batasan redistribusi.
+- [x] Jika lisensi tidak jelas atau melarang penggunaan, ganti kandidat.
+- [x] Catat keputusan D1 beserta tanggal dan alasan.
 
 - **Output:** Catatan lisensi per dataset; keputusan D1.
 - **Estimasi:** 0,5 hari.
 - **Dependensi:** P1-08.
 - **Acceptance:** Dataset yang dipilih memiliki lisensi tertulis yang mengizinkan
   penggunaan; keputusan dan risikonya tercatat.
+- **Bukti:** Keputusan D1 terdokumentasi di `docs/tasks/evidence/dataset-license.md`. Dataset ODbL & CC0 disetujui, dataset tanpa kepastian lisensi ditolak.
 
 ### P2-02 — Akuisisi dataset dan manifest awal
 

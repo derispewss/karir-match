@@ -1,0 +1,17 @@
+[
+  {
+    "persona_id": "p01",
+    "description": "Junior Backend Engineer, prefers Python/FastAPI",
+    "seed_doc_ids": ["syn-id-0005", "syn-id-0014", "syn-id-0043"]
+  },
+  {
+    "persona_id": "p02",
+    "description": "Frontend React developer, likes Tailwind",
+    "seed_doc_ids": ["syn-id-0003", "syn-id-0023", "syn-id-0026"]
+  },
+  {
+    "persona_id": "p03",
+    "description": "Data Analyst focusing on SQL & Tableau",
+    "seed_doc_ids": ["syn-id-0006", "syn-id-0010", "syn-id-0015"]
+  }
+]

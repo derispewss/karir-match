@@ -1,0 +1,43 @@
+# Preprocess configuration for KarirMatch (Phase 4)
+
+pipeline:
+  case_folding: true               # lower‑casing
+  html_url_removal: true           # strip <tags> and URLs
+  whitespace_normalization: true   # collapse multiple spaces / strip
+  language_detection: true         # simple heuristic (id vs en vs mixed)
+  tokenization: true
+  stopword_removal: true
+  stemming: true
+  abbreviation_normalization: true
+  field_weighting: true            # used later for profile aggregation
+
+# Stopword lists (paths relative to repository root)
+stopwords:
+  id: config/stopwords_id.txt
+  en: config/stopwords_en.txt
+  domain: config/stopwords_domain.txt
+
+# Abbreviation dictionary (key → expansion)
+abbreviations:
+  swe: "software engineer"
+  s1: "sarjana"
+  "fresh grad": "fresh graduate"
+  "node.js": "nodejs"
+  "c++": "cpp"
+  "ui/ux": "ui ux"
+
+# Field weighting for scoring (must sum to 1.0)
+field_weights:
+  title: 0.4
+  skills: 0.3
+  description: 0.3
+
+# TF‑IDF vectorizer parameters (shared for all fields)
+# These are passed directly to sklearn.feature_extraction.text.TfidfVectorizer
+
+tfidf_params:
+  sublinear_tf: true
+  smooth_idf: true
+  norm: "l2"
+  min_df: 1
+  max_df: 1.0

@@ -1,0 +1,10 @@
+# Personalisation configuration – Phase 5
+
+# List of alpha values to sweep (0 = pure TF‑IDF, 1 = pure profile)
+alpha_values: [0.0, 0.5, 1.0]
+
+# Path to profile definitions (list of seed doc ids per persona)
+profiles_path: "research/profiles.json"
+
+# Whether to enable field weighting in profile aggregation (should match TF‑IDF config)
+use_field_weights: true
